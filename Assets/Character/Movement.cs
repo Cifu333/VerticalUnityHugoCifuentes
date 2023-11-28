@@ -81,27 +81,7 @@ public class Movement : MonoBehaviour
         //transform.rotation = new Vector3 (0f,transform.rotation.y, 0f);
 
 
-        if (count == 3)
-        {
-            jumpForce = 5;
-            count = 0;
-        }
-
-        if (controller.isGrounded)
-
-        {
-            Debug.Log("ISGROUND");
-            //Debug.Log(Input_Manager._INPUT_MANAGER.GetJumpButonPresed());
-            if (Input_Manager._INPUT_MANAGER.getJUmpButton())
-            {
-                Debug.Log("isjumping");
-                finalVelocity.y = jumpForce;
-                jumpForce += jumpForce;
-                count++;
-            }
-          
-
-        }
+      
 
         finalVelocity.y += direction.y * gravity * Time.deltaTime;
 
@@ -119,35 +99,10 @@ public class Movement : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, camera.transform.eulerAngles.y, 0f);
         direction.Normalize();
 
-        /*Vector3 eulerRotation = camera.transform.rotation.eulerAngles;
-
-        if (direction.y < 0)
-        {
-            eulerRotation.y += 180f;
-        }
-
-        if (direction.x > 0)
-        {
-            eulerRotation.y += 90f;
-        }
-
-        if (direction.x < 0)
-        {
-            eulerRotation.y += 270f;
-        }
-
-        if (direction.x != 0 || direction.y != 0)
-        {
-            //transform.LookAt(direction);
-        }*/
+        
     }
 
-    public Vector3 SetJump()
-    {
-        finalVelocity.y = 10;
-        return finalVelocity;
-    }
-
+   
     public bool IsMoving()
     {
         return Ismoving;
