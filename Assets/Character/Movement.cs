@@ -45,6 +45,7 @@ public class Movement : MonoBehaviour
         if (Input_Manager._INPUT_MANAGER.GetLeftAxisPressed())
         {
             Ismoving = true;
+           
         }
         else
         {
@@ -80,8 +81,8 @@ public class Movement : MonoBehaviour
 
         //transform.rotation = new Vector3 (0f,transform.rotation.y, 0f);
 
+        Debug.Log(gameObject.name + ": " + finalVelocity);
 
-      
 
         finalVelocity.y += direction.y * gravity * Time.deltaTime;
 
