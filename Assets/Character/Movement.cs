@@ -26,18 +26,29 @@ public class Movement : MonoBehaviour
 
     private float rotationSpeed = 5f;
 
+
+
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
 
         controller = GetComponent<CharacterController>();
+
+       
+    }
+
+    private void Start()
+    {
     }
 
 
-    
     private void Update()
     {
-        
+        ///
+
+
+
+        ////
        
 
         input = Input_Manager._INPUT_MANAGER.GetLeftAxisUpdate();
@@ -81,7 +92,7 @@ public class Movement : MonoBehaviour
 
         //transform.rotation = new Vector3 (0f,transform.rotation.y, 0f);
 
-        Debug.Log(gameObject.name + ": " + finalVelocity);
+        //Debug.Log(gameObject.name + ": " + finalVelocity);
 
 
         finalVelocity.y += direction.y * gravity * Time.deltaTime;
@@ -119,5 +130,6 @@ public class Movement : MonoBehaviour
     {
         return controller.isGrounded;
     }
+
 
 }
